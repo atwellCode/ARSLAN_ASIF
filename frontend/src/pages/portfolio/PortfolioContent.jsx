@@ -102,13 +102,13 @@ const PortfolioContent = () => {
         <div className="row row-cols-1 row-cols-md-3 g-3 p-3">
           {currentItems.map((item) => (
             <div key={item.id} className={`col ${["Flyers", "Banners"].includes(category) ? "col-md-6" : "col-md-4"}`}>
-              <div>
+              <div className="m-2">
                 <img src={item.image} className="card-img-top" alt={item.title} />
-                <div >
+                <div className="text-center">
                   <p className="fs-6 fw-bold text-light text-center">{item.title}</p>
                   {category === "Websites" && (
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" >
-                      Visit Website
+                    <a href={item.url} className="btn btn-outline-light text-decoration-none btn-sm" target="_blank" rel="noopener noreferrer" >
+                      Open in New Tab
                     </a>
                   )}
                 </div>
@@ -119,9 +119,9 @@ const PortfolioContent = () => {
 
         {/* Pagination */}
         {filteredItems.length > itemsPerPage && (
-          <div className="d-flex justify-content-center pb-5">
+          <div className="d-flex justify-content-center p-4">
             <button onClick={() => paginate("prev")} disabled={currentPage === 1} className="btn btn-secondary mx-2">
-              Previous
+             Prev
             </button>
             <button onClick={() => paginate("next")} disabled={indexOfLastItem >= filteredItems.length} className="btn btn-secondary mx-2">
               Next
