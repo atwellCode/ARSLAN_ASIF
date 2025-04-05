@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { FaSchool, FaLaptopCode, FaPalette } from "react-icons/fa";
+import HeadingText from "../../components/HeadingText";
 
 const EduExperience = () => {
   const styles = {
@@ -14,13 +15,6 @@ const EduExperience = () => {
       maxWidth: "1100px",
       margin: "auto",
     },
-    heading: {
-      color: "#03DDA7",
-      textShadow: "2px 2px 10px #03DDA7",
-      fontSize: "2.5rem",
-      fontWeight: "bold",
-      marginBottom: "30px",
-    },
     grid: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
@@ -33,10 +27,6 @@ const EduExperience = () => {
       textAlign: "center",
       color: "white",
       transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
-    },
-    cardHover: {
-      transform: "translateY(-5px)",
-      boxShadow: "0px 4px 15px rgba(3, 221, 167, 0.3)",
     },
     details: {
       textAlign: "center",
@@ -79,11 +69,11 @@ const EduExperience = () => {
   return (
     <section style={styles.section}>
       <div style={styles.container}>
-        <h1 style={styles.heading}>Education</h1>
+        <HeadingText header="EDUCATION & CERTIFICATES" subHeader="Knowledge Earned Success Sealed" />
 
         <div style={styles.grid}>
           {/* Intermediate Education */}
-          <div style={styles.card}>
+          <div style={{...styles.card, transition: "transform 0.3s ease, box-shadow 0.3s ease"}} className="hover-card">
             <div style={iconBg}>
               <FaSchool style={colorIcon} />
             </div>
@@ -98,7 +88,7 @@ const EduExperience = () => {
           </div>
 
           {/* Bachelor's Degree */}
-          <div style={styles.card}>
+          <div style={{...styles.card, transition: "transform 0.3s ease, box-shadow 0.3s ease"}} className="hover-card">
             <div style={iconBg}>
               <FaGraduationCap style={colorIcon} />
             </div>
@@ -113,7 +103,7 @@ const EduExperience = () => {
           </div>
 
           {/* MERN Stack Bootcamp */}
-          <div style={styles.card}>
+          <div style={{...styles.card, transition: "transform 0.3s ease, box-shadow 0.3s ease"}} className="hover-card">
             <div style={iconBg}>
               <FaLaptopCode style={colorIcon} />
             </div>
@@ -128,7 +118,7 @@ const EduExperience = () => {
           </div>
 
           {/* Graphic Designing Course */}
-          <div style={styles.card}>
+          <div style={{...styles.card, transition: "transform 0.3s ease, box-shadow 0.3s ease"}} className="hover-card">
             <div style={iconBg}>
               <FaPalette style={colorIcon} />
             </div>
@@ -142,6 +132,15 @@ const EduExperience = () => {
             </div>
           </div>
         </div>
+
+        <style>
+          {`
+            .hover-card:hover {
+              transform: translateY(-10px);
+              box-shadow: 0px 15px 15px #03DDA7;
+            }
+          `}
+        </style>
       </div>
     </section>
   );
